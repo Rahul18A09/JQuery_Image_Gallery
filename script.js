@@ -30,10 +30,16 @@ $(document).ready(function () {
     $(".gallery").append(`
         <div class="gallery-item ${cat}">
         <img src=" ${url}">
+        <button class="delete-btn btn btn-sm btn-danger mt-2">Delete</button>
         <div class="img-title">${title}</div>
         </div>
         `);
 
-        $("#imgUrl").val("");
+    $("#imgUrl").val("");
+  });
+
+  // DELETE IMAGE
+  $(document).on("click", ".delete-btn", function () {
+    $(this).closest(".gallery-item").remove();
   });
 });
